@@ -10,7 +10,7 @@ export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="w-full p-6">
+    <nav className="container mx-auto p-6">
 
       {/* Top row */}
       <div className="flex items-center justify-between">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald} from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/common/Navigation";
+import Footer from "@/components/common/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,11 +25,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="container mx-auto min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col">
         <Navigation />
-        <main className="flex-1 flex flex-col gap-6 px-6 py-6 md:px-6 md:py-12">
+        <main className="container mx-auto flex-1 flex flex-col gap-6 px-6 py-6 md:px-6 md:py-12">
         {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

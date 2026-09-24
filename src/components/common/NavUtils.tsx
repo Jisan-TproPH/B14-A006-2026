@@ -17,7 +17,7 @@ export const NavLinks = () => {
     return (
         <>
             <Link className={`px-4 py-1.5 rounded-full ${pathname === '/' ? 'bg-[#1A2312] text-primary' : ''}`} href="/">Workouts</Link>
-            <Link className={`px-4 py-1.5 rounded-full ${pathname === '/plan' ? 'bg-[#1A2312] text-primary' : ''}`} href="/plan">My Plan</Link>
+            <Link className={`px-4 py-1.5 rounded-full ${pathname === '/myplan' ? 'bg-[#1A2312] text-primary' : ''}`} href="/myplan">My Plan</Link>
         </>
     )
 }
