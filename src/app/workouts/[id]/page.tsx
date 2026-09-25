@@ -7,7 +7,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
   const workout = await getWorkoutById(Number(id));
 
   return (
-    <div className="px-6 py-12 flex flex-col justify-between gap-4 lg:flex-row lg:gap-14">
+    <div className="px-6 py-6 md:py-12 flex flex-col justify-between gap-4 lg:flex-row lg:gap-14">
       <Image src={workout.image} alt={workout.name} width={400} height={200} className="rounded-2xl object-cover w-full lg:w-1/2 lg:h-full" />
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-black font-oswald">{workout.name}</h1>

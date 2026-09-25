@@ -7,7 +7,7 @@ export const NavState = ()=>{
     return ( 
             <> 
                 <div className="flex items-center gap-2">Plan <div className="text-black bg-primary rounded-full flex items-center justify-center h-5 w-5">0</div></div>
-                <div className="flex items-center gap-2">Saved <div className="text-black bg-primary rounded-full flex items-center justify-center h-5 w-5">0</div></div>
+                <div className="flex items-center gap-2">Saved <div className=" border border-[#2D313B] rounded-full flex items-center justify-center h-5 w-5">0</div></div>
             </>
     )
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <footer className="bg-black text-white py-10 px-6 md:px-12 mt-16">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
                 <div className="flex items-center gap-2.5">
                     <Image
                         src="/assets/logo.png"
@@ -16,7 +16,7 @@ export default function Footer() {
                         FITLOG
                     </span>
                 </div>
-                <p className="text-sm md:text-base">&copy; {new Date().getFullYear()} FitLog — Workout Library. Train hard, log honest.</p>
+                <p className="text-xs">&copy; {new Date().getFullYear()} FitLog — Workout Library. Train hard, log honest.</p>
             </div>
         </footer>
     )
