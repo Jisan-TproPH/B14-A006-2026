@@ -1,13 +1,16 @@
 "use client";
 
+import { useWorkout } from "@/contexts/Workout";
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export const NavState = ()=>{
+    const workoutManager = useWorkout();
+
     return ( 
             <> 
-                <div className="flex items-center gap-2">Plan <div className="text-black bg-primary rounded-full flex items-center justify-center h-5 w-5">0</div></div>
-                <div className="flex items-center gap-2">Saved <div className=" border border-[#2D313B] rounded-full flex items-center justify-center h-5 w-5">0</div></div>
+                <div className="flex items-center gap-2">Plan <div className="text-black bg-primary rounded-full flex items-center justify-center h-5 w-5">{workoutManager?.todaysPlan?.length}</div></div>
+                <div className="flex items-center gap-2">Saved <div className=" border border-[#2D313B] rounded-full flex items-center justify-center h-5 w-5">{workoutManager?.savedWorkouts?.length}</div></div>
             </>
     )
 }

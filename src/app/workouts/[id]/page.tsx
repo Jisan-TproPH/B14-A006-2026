@@ -55,7 +55,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
             ))
           }
         </div>
-        <DetailsActions />
+        <DetailsActions workout={workout} />
       </div>
     </div>
   );

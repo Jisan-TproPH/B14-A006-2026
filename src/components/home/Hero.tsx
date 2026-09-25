@@ -11,7 +11,7 @@ const Hero = () => {
             </div>
         </div>
         <div className="flex-1 flex justify-center items-center mt-4 md:mt-0">
-            <Image src="/assets/banner.png" alt="Hero Image" width={500} height={500} />
+            <Image src="/assets/banner.png" alt="Hero Image" width={600} height={600} />
         </div>
     </div>
 }
