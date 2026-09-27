@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from "react";
 import LibraryCollections from "./LibraryCollections";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 export default function Library() {
 
@@ -22,6 +23,9 @@ export default function Library() {
       </div>}>
         <LibraryCollections searchTerm={searchTerm} />
       </Suspense>
+
     </div>
   )
 }
+
+

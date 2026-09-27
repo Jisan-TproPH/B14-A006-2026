@@ -4,7 +4,23 @@ import Image from "next/image";
 
 export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const workout = await getWorkoutById(Number(id));
+
+  
+  let workout = null;
+
+  try {
+    workout = await getWorkoutById(Number(id));
+  } catch (error) {
+    console.error("Error fetching workout data:", error);
+    return (
+      <div className="flex items-center justify-center p-10">
+        <p className="text-sm text-[#9CA3AF]">Something went wrong. Please try again later.</p>
+        <p className="text-sm text-[#9CA3AF]">{(error as Error).message}</p>
+      </div>
+    );
+  }
+
+  
 
   return (
     <div className="px-6 py-6 md:py-12 flex flex-col justify-between gap-4 lg:flex-row lg:gap-14">
