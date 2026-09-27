@@ -2,22 +2,19 @@
 
 import { workoutData, type Workout } from "@/lib/workoutData";
 import LibraryCard from "./LibraryCard";
+import { use } from "react";
 
 
 
-export default async function LibraryCollections({ searchTerm }: { searchTerm: string }) {
-
-    let workouts = await workoutData();
-
-    if (!workouts) {
-        return (
-            <div className="flex items-center justify-center p-10">
-                <p className="text-sm text-[#9CA3AF]">Something went wrong. Please try again later.</p>
-            </div>
-        );
-    }
 
 
+
+
+const workoutDataPromise = workoutData();
+
+export default function LibraryCollections({ searchTerm }: { searchTerm: string }) {
+
+    const workouts = use(workoutDataPromise);
     const filtered = workouts.filter((workout: Workout) => 
                     workout.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                     workout.description.toLowerCase().includes(searchTerm.toLowerCase())
