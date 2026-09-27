@@ -7,15 +7,12 @@ import LibraryCard from "./LibraryCard";
 
 export default async function LibraryCollections({ searchTerm }: { searchTerm: string }) {
 
-    let workouts = []
-    try {
-        workouts = await workoutData();
-    } catch (error) {
-        console.error("Error fetching workout data:", error);
+    let workouts = await workoutData();
+
+    if (!workouts) {
         return (
             <div className="flex items-center justify-center p-10">
                 <p className="text-sm text-[#9CA3AF]">Something went wrong. Please try again later.</p>
-                <p className="text-sm text-[#9CA3AF]">{(error as Error).message}</p>
             </div>
         );
     }

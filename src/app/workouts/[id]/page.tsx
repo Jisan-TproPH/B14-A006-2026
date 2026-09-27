@@ -4,18 +4,14 @@ import Image from "next/image";
 
 export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-
   
-  let workout = null;
+  
+  let workout = await getWorkoutById(Number(id));
 
-  try {
-    workout = await getWorkoutById(Number(id));
-  } catch (error) {
-    console.error("Error fetching workout data:", error);
+  if (!workout) {
     return (
       <div className="flex items-center justify-center p-10">
-        <p className="text-sm text-[#9CA3AF]">Something went wrong. Please try again later.</p>
-        <p className="text-sm text-[#9CA3AF]">{(error as Error).message}</p>
+        <p className="text-sm text-[#9CA3AF]">Workout not found.</p>
       </div>
     );
   }
