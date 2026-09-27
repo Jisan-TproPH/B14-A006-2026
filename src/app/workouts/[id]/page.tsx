@@ -8,14 +8,6 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
   
   let workout = await getWorkoutById(Number(id));
 
-  if (!workout) {
-    return (
-      <div className="flex items-center justify-center p-10">
-        <p className="text-sm text-[#9CA3AF]">Workout not found.</p>
-      </div>
-    );
-  }
-
   
 
   return (
